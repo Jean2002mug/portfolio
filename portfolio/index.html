@@ -5,6 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jean Michel Mugabe - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 80%;
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 15px 0;
+            font-size: 18px;
+            color: #555;
+        }
+        img {
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #ff5733;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,29 +81,22 @@
         <h2>Projects</h2>
         <ul>
             <li><strong>Sightreading App</strong> - A desktop app for music sight-reading.</li>
+            <img src="sightreading.jpg" width="350" height="200">
             
-                    <h2>HTML Images</h2>
-                    <p>HTML images are defined with the img tag:</p>
-                    
-                    <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
-            <li><strong>Genetic Scheduling Algorithm Research</strong> - Analyzing CPU scheduling in virtual environments.</li>
-                     
-                    <h2>HTML Images</h2>
-                    <p>HTML images are defined with the img tag:</p>
-                    
-                    <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
-            <li><strong> Authors and Book Publisher data</strong> - A data science research about the relationship between the author and bookpublisher.</li>
-                        
-                    <h2>HTML Images</h2>
-                    <p>HTML images are defined with the img tag:</p>
-                    
-                    <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+            <li><strong>Gravity Calculator Application</strong> - Developed an application that calculates any gravity measurement.</li>
+            <img src="grvty.webp" width="350" height="200">
             
+            <li><strong>Authors and Book Publisher Data</strong> - A data science research about the relationship between the author and book publisher.</li>
+            <img src="AP data.webp" width="350" height="200">
+            
+            <li><strong>Java-based Invoice</strong> - An invoice system which keeps records of the sales made.</li>
+            <img src="invoice.webp" width="350" height="200">
+        </ul>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email:michelmugabe09@gmail.com</p>
+        <p>Email: michelmugabe09@gmail.com</p>
         <p>GitHub: <a href="https://github.com/Jean2002mug" target="_blank">Jean2002mug</a></p>
     </section>
 </body>
