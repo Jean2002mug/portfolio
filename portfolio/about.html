@@ -7,24 +7,52 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #fdfbfb, #ebedee);
+            background: linear-gradient(135deg, #000000, #1c1c1c);
             margin: 0;
             padding: 20px;
-            color: #333;
+            color: #e0e0e0;
         }
         header {
-            background: #4facfe;
+            background: #00ff88;
             color: white;
             padding: 20px;
             text-align: center;
+            text-shadow: 0 0 8px rgba(0, 255, 136, 0.8);
         }
-        .content {
-            max-width: 800px;
+        .container {
+            max-width: 1000px;
             margin: 30px auto;
-            padding: 20px;
-            background: white;
+            display: flex;
+            flex-wrap: wrap;
+            background: #1e1e1e;
             border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 20px rgba(0, 255, 136, 0.2);
+            padding: 20px;
+        }
+        .bio-text {
+            flex: 1 1 60%;
+            padding-right: 20px;
+        }
+        .bio-image {
+            flex: 1 1 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bio-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,255,136,0.3);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .bio-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -32,13 +60,18 @@
     <header>
         <h1>About Me</h1>
     </header>
-    <div class="content">
-        <h2>Biography</h2>
-        <p>Hi! I'm Jean Michel Mugabe, a recent Computer Science graduate from Mount Allison University with a minor in Astronomy. I'm passionate about solving real-world problems with code, and I have experience in Python, Java, and C, along with a strong foundation in data analysis and machine learning.</p>
-        
-        <p>I’ve worked on projects ranging from gravitational simulation apps to sight-reading tools for musicians. I’m also experienced in system optimization and software development workflows. Outside of coding, I enjoy exploring astronomy and geography.</p>
-        
-        <p>I'm currently seeking opportunities where I can grow as a developer and contribute to exciting software and data-driven projects.</p>
+    <div class="container">
+        <div class="bio-text">
+            <h2>Biography</h2>
+            <p>I’m Jean Michel Mugabe, a Computer Science graduate from Mount Allison University with a minor in Astronomy. My academic and professional focus centers around developing scalable software systems and applying data-driven techniques to solve complex problems.</p>
+
+            <p>With strong proficiency in Python, Java, and C, I’ve worked on applications ranging from gravitational physics simulations to sight-reading aids for musicians. My core strengths include algorithm design, data analysis, and software architecture. I’m especially interested in systems optimization, AI model integration, and human-computer interaction.</p>
+
+            <p>I’ve collaborated in multi-disciplinary teams, contributed to open-source software, and independently developed full-stack tools and machine learning pipelines. I am now looking for opportunities where I can drive innovation, refine system workflows, and contribute to technically impactful projects.</p>
+        </div>
+        <div class="bio-image">
+            <img src="_MG_8823.jpg" alt="Portrait of Jean Michel Mugabe">
+        </div>
     </div>
 </body>
 </html>
