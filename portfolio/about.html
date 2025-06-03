@@ -1,77 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Jean Michel Mugabe</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #000000, #1c1c1c);
-            margin: 0;
-            padding: 20px;
-            color: #e0e0e0;
-        }
-        header {
-            background: #00ff88;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            text-shadow: 0 0 8px rgba(0, 255, 136, 0.8);
-        }
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            display: flex;
-            flex-wrap: wrap;
-            background: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(0, 255, 136, 0.2);
-            padding: 20px;
-        }
-        .bio-text {
-            flex: 1 1 60%;
-            padding-right: 20px;
-        }
-        .bio-image {
-            flex: 1 1 35%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .bio-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,255,136,0.3);
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            .bio-text {
-                padding-right: 0;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Jean Michel Mugabe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #121212, #1f1f1f);
+      margin: 0;
+      padding: 20px;
+      color: #f0f0f0;
+    }
+
+    header {
+      background: #00ff88;
+      color: #000;
+      padding: 20px;
+      text-align: center;
+      text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #1c1c1c;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(0, 255, 136, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .bio-text {
+      flex: 2;
+    }
+
+    .bio-image {
+      flex: 1;
+    }
+
+    .bio-image img {
+      width: 250px;
+      height:260px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 12px rgba(0, 255, 136, 0.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>About Me</h1>
-    </header>
-    <div class="container">
-        <div class="bio-text">
-            <h2>Biography</h2>
-            <p>I’m Jean Michel Mugabe, a Computer Science graduate from Mount Allison University with a minor in Astronomy. My academic and professional focus centers around developing scalable software systems and applying data-driven techniques to solve complex problems.</p>
+  <header>
+    <h1>About Me</h1>
+  </header>
 
-            <p>With strong proficiency in Python, Java, and C, I’ve worked on applications ranging from gravitational physics simulations to sight-reading aids for musicians. My core strengths include algorithm design, data analysis, and software architecture. I’m especially interested in systems optimization, AI model integration, and human-computer interaction.</p>
-
-            <p>I’ve collaborated in multi-disciplinary teams, contributed to open-source software, and independently developed full-stack tools and machine learning pipelines. I am now looking for opportunities where I can drive innovation, refine system workflows, and contribute to technically impactful projects.</p>
-        </div>
-        <div class="bio-image">
-            <img src="_MG_8823.jpg" alt="Portrait of Jean Michel Mugabe">
-        </div>
+  <div class="content">
+    <div class="bio-image">
+      <img src="_MG_8823.jpg" alt="Jean Michel Mugabe">
     </div>
+    <div class="bio-text">
+      <h2>Technical Biography</h2>
+      <p>I’m Jean Michel Mugabe, a Computer Science graduate from Mount Allison University with a Minor in Astronomy. My work focuses on solving technical challenges using Python, Java, and C, and I’m especially passionate about data analysis, machine learning, and software performance optimization.</p>
+      
+      <p>I’ve engineered applications ranging from scientific gravity calculators to tools supporting music education and literary data visualization. My projects apply robust data pipelines, object-oriented principles, and optimized algorithms to create scalable and meaningful solutions.</p>
+      
+      <p>I am actively seeking roles where I can apply technical depth, creativity, and data-driven thinking to real-world problems—particularly in industries like aerospace, analytics, and scientific computing.</p>
+    </div>
+  </div>
 </body>
 </html>
