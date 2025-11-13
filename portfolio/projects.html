@@ -1,69 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Jean Michel Mugabe</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #d4fc79, #96e6a1);
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        header {
-            background: #11998e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .project {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 700px;
-            text-align: center;
-        }
-        img {
-            width: 350px;
-            height: 200px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – Jean Michel Mugabe</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #29323c 0%, #151515 40%, #050505 100%);
+      color: #f5f5f5;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      padding: 32px 10vw 70px;
+      background: linear-gradient(135deg, rgba(12, 15, 22, 0.97), rgba(10, 32, 26, 0.96));
+      border-bottom: 1px solid rgba(120, 255, 189, 0.22);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0%, rgba(71, 230, 172, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: #b2f3dd;
+      opacity: 0.85;
+      margin-bottom: 18px;
+      transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .back-link span.icon {
+      font-size: 1.2rem;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      transform: translateX(-2px);
+    }
+
+    header h1 {
+      font-size: clamp(2.1rem, 3.4vw, 3rem);
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .header-sub {
+      max-width: 520px;
+      font-size: 0.97rem;
+      color: #d4fff0;
+      opacity: 0.9;
+    }
+
+    .pill-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: #8ee7b8;
+      background: rgba(4, 10, 9, 0.9);
+      border: 1px solid rgba(72, 231, 172, 0.5);
+      margin-top: 16px;
+    }
+
+    .pill-label .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #47e6ac;
+    }
+
+    /* MAIN */
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 10vw 42px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: radial-gradient(circle at top left, #232931, #111314);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(137, 255, 209, 0.22);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 55px rgba(0, 0, 0, 0.95);
+      border-color: rgba(137, 255, 209, 0.5);
+    }
+
+    .project-image-wrap {
+      position: relative;
+      overflow: hidden;
+      max-height: 220px;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(12%);
+      transform: scale(1.03);
+      transition: transform 0.35s ease-out, filter 0.35s ease-out;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.08);
+      filter: grayscale(0%);
+    }
+
+    .project-tag {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: rgba(0, 0, 0, 0.78);
+      color: #e7fff7;
+      border: 1px solid rgba(153, 246, 228, 0.65);
+    }
+
+    .project-body {
+      padding: 18px 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-title {
+      font-size: 1.18rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: #d8d8d8;
+      line-height: 1.6;
+    }
+
+    .tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 0.78rem;
+    }
+
+    .chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 247, 214, 0.45);
+      background: rgba(5, 10, 12, 0.9);
+      color: #b8fff2;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 26px 20px 60px;
+      }
+
+      main {
+        padding: 26px 20px 34px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>My Projects</h1>
-        <a href="index.html" style="color: #000; text-decoration: none;">← Back to Main page
-        </a>
-    </header>
-
-    <div class="project">
-        <h2>Sightreading App</h2>
-        <p>A desktop app for music sight-reading.</p>
-        <img src="sightreading.jpg" alt="Sightreading App">
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="back-link">
+        <span class="icon">←</span>
+        <span>Back to main page</span>
+      </a>
+      <h1>My Projects</h1>
+      <p class="header-sub">
+        A selection of projects that show how I use code to explore ideas in music, physics, data and everyday workflows.
+      </p>
+      <div class="pill-label">
+        <span class="dot"></span>
+        <span>Selected work</span>
+      </div>
     </div>
+  </header>
 
-    <div class="project">
-        <h2>Gravity Calculator Application</h2>
-        <p>An application that calculates gravity measurements.</p>
-        <img src="grvty.webp" alt="Gravity Calculator">
-    </div>
+  <main>
+    <div class="projects-grid">
+      <!-- Sightreading App -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="sightreading.jpg" alt="Screenshot or visual mockup of the sightreading desktop app interface" />
+          <div class="project-tag">Desktop app</div>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Sightreading App</h2>
+          <p class="project-desc">
+            A desktop practice tool that helps musicians improve sight reading with dynamic exercises and real time feedback on performance.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">Java</span>
+            <span class="chip">JavaFX</span>
+            <span class="chip">Music theory</span>
+          </div>
+        </div>
+      </article>
 
-    <div class="project">
-        <h2>Authors and Book Publisher Data</h2>
-        <p>Data science research on author-publisher relationships.</p>
-        <img src="AP data.webp" alt="Publisher Data">
-    </div>
+      <!-- Gravity Calculator Application -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="grvty.webp" alt="Gravity calculator interface with orbital parameters and numerical outputs" />
+          <div class="project-tag">Scientific tool</div>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Gravity Calculator Application</h2>
+          <p class="project-desc">
+            A physics application that computes gravitational interactions and orbital values for different bodies which makes it easier to explore celestial mechanics concepts.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">Python</span>
+            <span class="chip">Numerical methods</span>
+            <span class="chip">Astronomy</span>
+          </div>
+        </div>
+      </article>
 
-    <div class="project">
-        <h2>Java-based Invoice System</h2>
-        <p>Tracks and manages sales records using Java.</p>
-        <img src="invoice.webp" alt="Invoice System">
+      <!-- Authors and Book Publisher Data -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="AP data.webp" alt="Data visualizations for authors and publishers" />
+          <div class="project-tag">Data project</div>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Authors and Book Publisher Data</h2>
+          <p class="project-desc">
+            A data science project that studies the relationships between authors and publishers with a focus on trends in collaboration, output and reach across the industry.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">Python</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">Data visualization</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Java Invoice System -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="invoice.webp" alt="Interface of a Java invoice management system" />
+          <div class="project-tag">Business tool</div>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Java Invoice System</h2>
+          <p class="project-desc">
+            A desktop system that records invoices, tracks sales records and generates summaries so that small businesses can monitor cash flow more easily.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">Java</span>
+            <span class="chip">Swing</span>
+            <span class="chip">SQLite</span>
+          </div>
+        </div>
+      </article>
     </div>
+  </main>
 </body>
 </html>
