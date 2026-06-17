@@ -24,8 +24,6 @@
       text-decoration: none;
     }
 
-    /* HEADER */
-
     header {
       position: relative;
       background: url("about me background photo header.jpg") center / cover no-repeat;
@@ -82,8 +80,6 @@
       text-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
     }
 
-    /* MAIN LAYOUT */
-
     main {
       max-width: 1200px;
       margin: -40px auto 40px;
@@ -124,14 +120,6 @@
       color: #74f2c2;
     }
 
-    .section-sub {
-      font-size: 0.9rem;
-      color: #b7b7b7;
-      margin-bottom: 22px;
-    }
-
-    /* CARDS */
-
     .card {
       background: rgba(9, 11, 15, 0.93);
       border-radius: 18px;
@@ -140,12 +128,6 @@
       border: 1px solid rgba(66, 255, 188, 0.16);
       backdrop-filter: blur(10px);
     }
-
-    .card + .card {
-      margin-top: 22px;
-    }
-
-    /* BIO GRID */
 
     .bio-grid {
       display: grid;
@@ -176,8 +158,6 @@
       border: 1px solid rgba(166, 255, 225, 0.4);
       filter: grayscale(10%);
     }
-
-    /* EDUCATION GRID */
 
     .education-grid {
       display: grid;
@@ -235,6 +215,28 @@
       filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.9));
     }
 
+    .work-item {
+      display: grid;
+      grid-template-columns: 3fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .work-logo {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 34px;
+    }
+
+    .work-logo img {
+      max-width: 190px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.9));
+    }
+
     @media (max-width: 900px) {
       header {
         padding: 32px 20px 70px;
@@ -247,12 +249,22 @@
 
       .bio-grid,
       .edu-item,
-      .education-grid {
+      .education-grid,
+      .work-item {
         grid-template-columns: 1fr;
       }
 
       .bio-image img {
         max-width: 220px;
+      }
+
+      .work-logo {
+        padding-top: 8px;
+        justify-content: flex-start;
+      }
+
+      .work-logo img {
+        max-width: 160px;
       }
     }
 
@@ -263,6 +275,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="header-inner">
@@ -270,7 +283,9 @@
         <span>←</span>
         <span>Back to main page</span>
       </a>
+
       <h1>About Me</h1>
+
       <p>
         A closer look at my background in computer science and astronomy, my interests in software design and data, and the journey that shaped my work.
       </p>
@@ -278,25 +293,29 @@
   </header>
 
   <main>
-    <!-- Biography -->
     <section id="background">
       <div class="pill-label">
         <span class="dot"></span>
         <span>Background</span>
       </div>
+
       <div class="card bio-grid" aria-label="Biography Container">
         <div class="bio-text">
           <h2 class="section-title">Biography</h2>
+
           <p>
             I am Jean Michel Mugabe, a Computer Science graduate from Mount Allison University with a minor in Astronomy. My academic and professional focus centers on developing scalable software systems and applying data driven techniques to solve complex problems.
           </p>
+
           <p>
             With strong proficiency in Python, Java and C, I have worked on applications that range from gravitational physics simulations to sight reading aids for musicians. My core strengths include algorithm design, data analysis and software architecture. I am especially interested in systems optimization, AI model integration and human computer interaction.
           </p>
+
           <p>
             I have collaborated in multi disciplinary teams, contributed to open source software and independently developed full stack tools and machine learning pipelines. I now look for opportunities where I can drive innovation, refine system workflows and contribute to technically impactful projects.
           </p>
         </div>
+
         <div class="bio-image">
           <img
             src="AboutMeBackground.jpg"
@@ -306,7 +325,6 @@
       </div>
     </section>
 
-    <!-- Education -->
     <section id="education">
       <div class="pill-label">
         <span class="dot"></span>
@@ -314,18 +332,20 @@
       </div>
 
       <div class="card education-grid" aria-label="Education Container">
-        <!-- Post Secondary -->
         <div class="edu-item">
           <div class="edu-text">
             <h2 class="section-title">Post Secondary</h2>
+
             <p>
               <strong>Bachelor of Science in Computer Science</strong>, Mount Allison University
             </p>
+
             <ul>
               <li>Minor in Astronomy</li>
-              <li>Relevant coursework: Data Structures, Algorithms, Artificial intelligence, Software Engineering</li>
+              <li>Relevant coursework: Data Structures, Algorithms, Artificial Intelligence, Software Engineering</li>
             </ul>
           </div>
+
           <div class="edu-logo">
             <img
               src="MTAlogo.png"
@@ -334,13 +354,14 @@
           </div>
         </div>
 
-        <!-- Secondary -->
         <div class="edu-item">
           <div class="edu-text">
             <h2 class="section-title">Secondary</h2>
+
             <p>
               <strong>High School Diploma in General Science</strong>, Saint Peter's Mission School
             </p>
+
             <ul>
               <li>
                 Completed the General Science program with elective courses in Physics, Chemistry, Mathematics and Geography. Built a strong base in analytical thinking and problem solving.
@@ -350,10 +371,46 @@
               </li>
             </ul>
           </div>
+
           <div class="edu-logo">
             <img
               src="High school logo.png"
               alt="Saint Peter's Mission School logo with a stylized emblem"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="pill-label">
+        <span class="dot"></span>
+        <span>Work</span>
+      </div>
+
+      <div class="card" aria-label="Work Experience Container">
+        <div class="work-item">
+          <div class="edu-text">
+            <h2 class="section-title">Experience</h2>
+
+            <p>
+              <strong>Junior Software Developer</strong> | Attendify | Jul 2025 – April 2026
+            </p>
+
+            <ul>
+              <li>Worked closely with internal teams to understand requirements and translate them into technical solutions.</li>
+              <li>Explained system behavior, workflows, and technical issues to both technical and non-technical stakeholders.</li>
+              <li>Debugged and resolved system issues, ensuring reliability and consistent performance.</li>
+              <li>Supported integration and data workflows by analyzing APIs and system interactions.</li>
+              <li>Collaborated with cross-functional teams to deliver features aligned with business needs.</li>
+              <li>Contributed to documentation and knowledge sharing to improve team understanding of systems.</li>
+            </ul>
+          </div>
+
+          <div class="work-logo">
+            <img
+              src="AttendifyLogo.png"
+              alt="Attendify logo"
             />
           </div>
         </div>
