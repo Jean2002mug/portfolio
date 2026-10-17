@@ -1,0 +1,7 @@
+/vendor/
+.env
+.env.*
+/config/mail.local.php
+/.vscode/
+/.idea/
+*.log

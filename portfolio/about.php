@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Jean Michel Mugabe</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      background: #060606 url("./assets/images/AboutMe.png") center / cover fixed no-repeat;
+      color: #e5e5e5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: relative;
+      background: url("./assets/images/about me background photo header.jpg") center / cover no-repeat;
+      color: #ffffff;
+      padding: 40px 10vw 80px;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.25));
+    }
+
+    .header-inner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-bottom: 18px;
+      transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .back-link span {
+      font-size: 1.1rem;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      transform: translateX(-2px);
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 3.4vw, 3rem);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 22px rgba(0, 0, 0, 0.8);
+    }
+
+    header p {
+      max-width: 520px;
+      font-size: 0.98rem;
+      color: #d1f6ec;
+      text-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: -40px auto 40px;
+      padding: 0 10vw 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pill-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: #8ee7b8;
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid rgba(72, 231, 172, 0.4);
+      margin-bottom: 18px;
+    }
+
+    .pill-label .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #47e6ac;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #74f2c2;
+    }
+
+    .card {
+      background: rgba(9, 11, 15, 0.93);
+      border-radius: 18px;
+      padding: 24px 26px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(66, 255, 188, 0.16);
+      backdrop-filter: blur(10px);
+    }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .bio-text p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #dcdcdc;
+      margin-bottom: 10px;
+    }
+
+    .bio-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bio-image img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(166, 255, 225, 0.4);
+      filter: grayscale(10%);
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 20px;
+    }
+
+    .edu-item {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .edu-text p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .edu-text ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .edu-text li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 0.9rem;
+      color: #c7c7c7;
+      margin-bottom: 6px;
+    }
+
+    .edu-text li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #47e6ac;
+    }
+
+    .edu-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .edu-logo img {
+      max-width: 130px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.9));
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: 3fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .work-logo {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 34px;
+    }
+
+    .work-logo img {
+      max-width: 190px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.9));
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 32px 20px 70px;
+      }
+
+      main {
+        padding: 0 20px 32px;
+        margin-top: -36px;
+      }
+
+      .bio-grid,
+      .edu-item,
+      .education-grid,
+      .work-item {
+        grid-template-columns: 1fr;
+      }
+
+      .bio-image img {
+        max-width: 220px;
+      }
+
+      .work-logo {
+        padding-top: 8px;
+        justify-content: flex-start;
+      }
+
+      .work-logo img {
+        max-width: 160px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <?php require __DIR__ . '/includes/nav.php'; ?>
+  <header>
+    <div class="header-inner">
+      <a href="index.php" class="back-link">
+        <span>←</span>
+        <span>Back to main page</span>
+      </a>
+
+      <h1>About Me</h1>
+
+      <p>
+        A closer look at my background in computer science and astronomy, my interests in software design and data, and the journey that shaped my work.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section id="background">
+      <div class="pill-label">
+        <span class="dot"></span>
+        <span>Background</span>
+      </div>
+
+      <div class="card bio-grid" aria-label="Biography Container">
+        <div class="bio-text">
+          <h2 class="section-title">Biography</h2>
+
+          <p>
+            I am Jean Michel Mugabe, a Computer Science graduate from Mount Allison University with a minor in Astronomy. My academic and professional focus centers on developing scalable software systems and applying data driven techniques to solve complex problems.
+          </p>
+
+          <p>
+            With strong proficiency in Python, Java and C, I have worked on applications that range from gravitational physics simulations to sight reading aids for musicians. My core strengths include algorithm design, data analysis and software architecture. I am especially interested in systems optimization, AI model integration and human computer interaction.
+          </p>
+
+          <p>
+            I have collaborated in multi disciplinary teams, contributed to open source software and independently developed full stack tools and machine learning pipelines. I now look for opportunities where I can drive innovation, refine system workflows and contribute to technically impactful projects.
+          </p>
+        </div>
+
+        <div class="bio-image">
+          <img
+            src="./assets/images/AboutMeBackground.jpg"
+            alt="Jean Michel Mugabe smiling, wearing a dark shirt, seated indoors with a softly lit background that gives a friendly and approachable mood"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="pill-label">
+        <span class="dot"></span>
+        <span>Education</span>
+      </div>
+
+      <div class="card education-grid" aria-label="Education Container">
+        <div class="edu-item">
+          <div class="edu-text">
+            <h2 class="section-title">Post Secondary</h2>
+
+            <p>
+              <strong>Bachelor of Science in Computer Science</strong>, Mount Allison University
+            </p>
+
+            <ul>
+              <li>Minor in Astronomy</li>
+              <li>Relevant coursework: Data Structures, Algorithms, Artificial Intelligence, Software Engineering</li>
+            </ul>
+          </div>
+
+          <div class="edu-logo">
+            <img
+              src="./assets/images/MTAlogo.png"
+              alt="Mount Allison University logo with stylized MTA lettering in maroon and white"
+            />
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-text">
+            <h2 class="section-title">Secondary</h2>
+
+            <p>
+              <strong>High School Diploma in General Science</strong>, Saint Peter's Mission School
+            </p>
+
+            <ul>
+              <li>
+                Completed the General Science program with elective courses in Physics, Chemistry, Mathematics and Geography. Built a strong base in analytical thinking and problem solving.
+              </li>
+              <li>
+                Key practical projects included applied mapping work in Geography that strengthened technical and spatial analysis skills.
+              </li>
+            </ul>
+          </div>
+
+          <div class="edu-logo">
+            <img
+              src="./assets/images/High school logo.png"
+              alt="Saint Peter's Mission School logo with a stylized emblem"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="pill-label">
+        <span class="dot"></span>
+        <span>Work</span>
+      </div>
+
+      <div class="card" aria-label="Work Experience Container">
+        <div class="work-item">
+          <div class="edu-text">
+            <h2 class="section-title">Experience</h2>
+
+            <p>
+              <strong>Junior Software Developer</strong> | Attendify | Jul 2025 – Mar 2026
+            </p>
+
+            <ul>
+              <li>Worked closely with internal teams to understand requirements and translate them into technical solutions.</li>
+              <li>Explained system behavior, workflows, and technical issues to both technical and non-technical stakeholders.</li>
+              <li>Debugged and resolved system issues, ensuring reliability and consistent performance.</li>
+              <li>Supported integration and data workflows by analyzing APIs and system interactions.</li>
+              <li>Collaborated with cross-functional teams to deliver features aligned with business needs.</li>
+              <li>Contributed to documentation and knowledge sharing to improve team understanding of systems.</li>
+            </ul>
+          </div>
+
+          <div class="work-logo">
+            <img
+              src="./assets/images/AttendifyLogo.png"
+              alt="Attendify logo"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

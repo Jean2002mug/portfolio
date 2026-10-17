@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – Jean Michel Mugabe</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #29323c 0%, #151515 40%, #050505 100%);
+      color: #f5f5f5;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      padding: 32px 10vw 70px;
+      background: linear-gradient(135deg, rgba(12, 15, 22, 0.97), rgba(10, 32, 26, 0.96));
+      border-bottom: 1px solid rgba(120, 255, 189, 0.22);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0%, rgba(71, 230, 172, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: #b2f3dd;
+      opacity: 0.85;
+      margin-bottom: 18px;
+      transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .back-link span.icon {
+      font-size: 1.2rem;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      transform: translateX(-2px);
+    }
+
+    header h1 {
+      font-size: clamp(2.1rem, 3.4vw, 3rem);
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .header-sub {
+      max-width: 520px;
+      font-size: 0.97rem;
+      color: #d4fff0;
+      opacity: 0.9;
+    }
+
+    .pill-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: #8ee7b8;
+      background: rgba(4, 10, 9, 0.9);
+      border: 1px solid rgba(72, 231, 172, 0.5);
+      margin-top: 16px;
+    }
+
+    .pill-label .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #47e6ac;
+    }
+
+    /* MAIN */
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 10vw 42px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: radial-gradient(circle at top left, #232931, #111314);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(137, 255, 209, 0.22);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 55px rgba(0, 0, 0, 0.95);
+      border-color: rgba(137, 255, 209, 0.5);
+    }
+
+    .project-image-wrap {
+      position: relative;
+      overflow: hidden;
+      max-height: 220px;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(12%);
+      transform: scale(1.03);
+      transition: transform 0.35s ease-out, filter 0.35s ease-out;
+    }
+
+    .project-card img.no-crop {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      object-position: center;
+      background: #f7f3ef;
+      transform: none;
+      filter: none;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.08);
+      filter: grayscale(0%);
+    }
+
+    /* Keep uploaded CSV and pytest logos fully visible. */
+    .project-card img.project-art {
+      height: 220px;
+      object-fit: contain;
+      background: #edf1ed;
+      transform: none;
+      filter: none;
+    }
+    .project-card:hover img.project-art {
+      transform: scale(1.02);
+      filter: none;
+    }
+
+    .project-tag {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: rgba(0, 0, 0, 0.78);
+      color: #e7fff7;
+      border: 1px solid rgba(153, 246, 228, 0.65);
+    }
+
+    .project-body {
+      padding: 18px 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-title {
+      font-size: 1.18rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: #d8d8d8;
+      line-height: 1.6;
+    }
+
+    .tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 0.78rem;
+    }
+
+    .project-download {
+      padding: 12px 18px 0;
+    }
+
+    .download-btn,
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #bdf7e6;
+      border: 1px solid rgba(148, 247, 214, 0.18);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+    }
+
+    .download-btn:hover,
+    .link-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-link {
+      padding: 12px 18px 0;
+    }
+
+    .chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 247, 214, 0.45);
+      background: rgba(5, 10, 12, 0.9);
+      color: #b8fff2;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 26px 20px 60px;
+      }
+
+      main {
+        padding: 26px 20px 34px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <?php require __DIR__ . '/includes/nav.php'; ?>
+  <header>
+    <div class="header-inner">
+      <a href="index.php" class="back-link">
+        <span class="icon">←</span>
+        <span>Back to main page</span>
+      </a>
+      <h1>My Projects</h1>
+      <p class="header-sub">
+        A selection of projects that show how I use code to explore ideas in music, physics, data and everyday workflows.
+      </p>
+      <div class="pill-label">
+        <span class="dot"></span>
+        <span>Selected work</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="projects-grid">
+      <!-- Sightreading App -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="./assets/images/sightreading.jpg" loading="lazy" alt="Screenshot or visual mockup of the sightreading desktop app interface" />
+          <div class="project-tag">Desktop app</div>
+        </div>
+        <div class="project-download">
+          <a href="./assets/download/Sightreading App-1.0.zip" download class="download-btn">
+            <span class="icon">↓</span>
+            <span>Download App</span>
+          </a>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Sightreading App</h2>
+          <p class="project-desc">
+            A desktop practice tool that helps musicians improve sight reading with dynamic exercises and real time feedback on performance.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">Java</span>
+            <span class="chip">JavaFX</span>
+            <span class="chip">Music theory</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Gravity Calculator: project started in 2023 -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="./assets/images/grvty.webp" loading="lazy" alt="Gravity Calculator project illustration">
+          <div class="project-tag">Scientific tool</div>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Gravity Calculator</h2>
+          <p class="project-desc">
+            A physics calculator for gravitational force, escape velocity, and other celestial formulas. Built with Python and FastAPI, with a Node.js API integration.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">Python</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Astronomy</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- pytest open source project -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="./assets/images/pytest.png" loading="lazy" alt="pytest logo" class="project-art" />
+          <div class="project-tag">Open source</div>
+        </div>
+        <div class="project-link">
+          <a href="https://github.com/pytest-dev/pytest" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <span class="icon">🔗</span>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">pytest (Open Source)</h2>
+          <p class="project-desc">
+            An open source Python testing framework for writing and running automated tests. This link opens the main pytest repository.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">Python</span>
+            <span class="chip">pytest</span>
+            <span class="chip">Automated testing</span>
+            <span class="chip">Open source</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CSV Parser in C -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="./assets/images/csv-parser.png" loading="lazy" alt="CSV Parser thumbnail" class="project-art" />
+          <div class="project-tag">Systems programming</div>
+        </div>
+        <div class="project-link">
+          <a href="https://github.com/Jean2002mug/csv-parser-c" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <span class="icon">🔗</span>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">CSV Parser in C</h2>
+          <p class="project-desc">
+            A CSV parser written in C for reading and writing records, using dynamic memory allocation and file I/O.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">C</span>
+            <span class="chip">File I/O</span>
+            <span class="chip">Memory management</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Authors and Book Publisher Data -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="./assets/images/AP data.webp" loading="lazy" alt="Data visualizations for authors and publishers" />
+          <div class="project-tag">Data project</div>
+        </div>
+        <div class="project-link">
+          <a href="https://github.com/Jean2002mug/Data-science-final-project" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <span class="icon">🔗</span>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Authors and Book Publisher Data</h2>
+          <p class="project-desc">
+            A data science project that studies the relationships between authors and publishers with a focus on trends in collaboration, output and reach across the industry.
+          </p>
+          <div class="tech-chips">
+            <span class="chip">Python</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">Data visualization</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Attendify forum-->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="./assets/images/Attendify_forum_logo.jpg" loading="lazy" alt="logo of the Attendify forum web application" class="no-crop" />
+          <div class="project-tag">forum</div>
+        </div>
+        <div class="project-link">
+          <a href="https://forum.useattendify.com/" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <span class="icon">🔗</span>
+            <span>View on Attendify</span>
+          </a>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Attendify forum</h2>
+          <p class="project-desc">
+            A community forum for Administrators and providers using the website of Attendify
+          </p>
+          <div class="tech-chips">
+            <span class="chip">php</span>
+            <span class="chip">CodeIgniter</span>
+            <span class="chip">MySQL</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

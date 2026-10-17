@@ -1,0 +1,11 @@
+DirectoryIndex index.php
+Options -Indexes
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Secret configurations and Composer internals should never be served.
+  RewriteRule ^(config|vendor|includes)(/|$) - [F,L,NC]
+  RewriteRule ^(\.git|\.vscode)(/|$) - [F,L,NC]
+</IfModule>
+<FilesMatch "^(\.env.*|\.gitignore|composer\.(json|lock)|.*\.(log|ini|bak))$">
+  Require all denied
+</FilesMatch>

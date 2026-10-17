@@ -1,0 +1,9 @@
+{
+  "name": "jean-michel/portfolio",
+  "description": "PHP portfolio with an SMTP contact form",
+  "type": "project",
+  "require": {
+    "php": ">=8.1",
+    "phpmailer/phpmailer": "^6.9"
+  }
+}
