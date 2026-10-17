@@ -327,6 +327,12 @@
           <img src="./assets/images/grvty.webp" loading="lazy" alt="Gravity Calculator project illustration">
           <div class="project-tag">Scientific tool</div>
         </div>
+        <div class="project-download">
+          <a href="https://gravitykalkilateri2023.com/" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <span class="icon">🔗</span>
+            <span>Visit the website</span>
+          </a>
+        </div>
         <div class="project-body">
           <h2 class="project-title">Gravity Calculator</h2>
           <p class="project-desc">
