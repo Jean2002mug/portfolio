@@ -302,10 +302,10 @@
           <img src="./assets/images/sightreading.jpg" loading="lazy" alt="Screenshot or visual mockup of the sightreading desktop app interface" />
           <div class="project-tag">Desktop app</div>
         </div>
-        <div class="project-download">
-          <a href="./assets/download/Sightreading App-1.0.zip" download class="download-btn">
-            <span class="icon">↓</span>
-            <span>Download App</span>
+        <div class="project-link">
+          <a href="https://github.com/Jean2002mug/Sightreading-app" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <span class="icon">🔗</span>
+            <span>View on GitHub</span>
           </a>
         </div>
         <div class="project-body">

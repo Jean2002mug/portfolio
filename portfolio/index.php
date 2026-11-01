@@ -14,7 +14,7 @@
     <section class="home-hero" aria-labelledby="home-title">
       <div class="home-intro">
         <div class="home-photo-frame">
-          <img src="assets/images/portfolio-professional-portrait-with-office-bokeh.png" alt="Portrait of Jean Michel Mugabe" class="home-photo" fetchpriority="high">
+          <img src="assets/images/jeanMichel.png" alt="Portrait of Jean Michel Mugabe" class="home-photo" fetchpriority="high">
         </div>
         <div class="home-copy">
           <p class="eyebrow">Welcome to my portfolio</p>
