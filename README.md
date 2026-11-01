@@ -1,41 +1,65 @@
-# Jean Michel Mugabe - Portfolio Website  
+<div align="center">
+  <img src="portfolio/assets/images/michel.png" alt="Jean Michel Mugabe" width="132">
 
-## 🌐 Overview  
-This is my personal portfolio website, showcasing my skills, projects, and experience in computer science. The site is built using **HTML, CSS, and JavaScript**, designed to provide a simple and elegant presentation of my work.  
+  <h1>Jean Michel Mugabe</h1>
+  <p><strong>Software Developer</strong></p>
+  <p>Building thoughtful software, from the first interface to the logic behind it.</p>
 
-## 🚀 Features  
-- **About Me**: Brief introduction and background.  
-- **Projects**: Showcase of selected programming and research projects.  
-- **Contact**: Links to GitHub, email, and other profiles.  
+  <a href="https://github.com/Jean2002mug">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/jean-mugabe-403383257">LinkedIn</a> ·
+</div>
 
-## 🛠️ Technologies Used  
-- **HTML** - For structuring content  
-- **CSS** - For styling and layout  
-- **JavaScript (optional)** - For interactivity  
+<br>
 
-## 📂 Project Structure  
-/portfolio │── index.html # Main webpage
-│── style.css # Stylesheet for layout & design
-│── script.js # (Optional) JavaScript for interactive elements
-│── images/ # Folder for images
-│── README.md # Project documentation
+## `whoami`
 
-## 📖 How to Use  
-1. **Clone the Repository**  
-   ```sh
-   git clone https://github.com/Jean2002mug/portfolio.git
-   cd portfolio
+I’m a Computer Science graduate from Mount Allison University, with a minor in Astronomy. I enjoy taking a problem apart, understanding how its pieces fit together, and building a solution that feels clear and useful from end to end.
 
-🌍 Deployment
-The site can be hosted using GitHub Pages or other static site hosting services.
+My work spans browser interfaces, server-side development, data, and scientific computing. I’m especially drawn to projects where software can make a complex idea easier to explore.
 
-📬 Contact
-GitHub: Jean2002mug
-Email: michelmugabe09@gmail.com
+## The toolkit
 
-🎨 Future Improvements
-Adding a responsive design for mobile users
-Integrating a blog section
-Enhancing animations and interactivity
+<p>
+  <img alt="PHP" src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=222">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="Java" src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white">
+  <img alt="C" src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=222">
+  <img alt="SQL" src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white">
+</p>
 
+| Layer | Technologies |
+| --- | --- |
+| **Interface** | HTML, CSS, JavaScript |
+| **Application** | PHP, Java, Python, C |
+| **Data & integration** | SQL, REST APIs |
+| **Tools & libraries** | Git, Composer, PHPMailer, Transformers.js |
 
+## How I like to build
+
+- **Start with the problem.** Understand who a feature is for and what it needs to do.
+- **Connect the layers.** Make the interface, application logic, and data work together.
+- **Keep it usable.** Value accessibility, responsive design, and clear feedback.
+- **Stay curious.** Bring ideas from computer science, astronomy, and creative interests into the work.
+
+## This portfolio
+
+This repository is the source for my personal portfolio. It is built with PHP, HTML, CSS, and JavaScript, and includes a browser-based project matcher alongside the rest of the site. The matcher can rank projects locally in the browser; it also offers a quick keyword-search mode.
+
+## Run it locally
+
+The site requires PHP 8.1 or later and [Composer](https://getcomposer.org/). From the repository root, start the PHP development server:
+
+```powershell
+Set-Location .\portfolio
+composer install
+php -S localhost:8000
+```
+
+Then open <http://localhost:8000>. Use a PHP server rather than opening the files directly. The project matcher needs an internet connection to download its model on first use; keyword search is available without it.
+
+---
+
+<div align="center">
+  <sub>Curiosity in, useful software out. &nbsp;·&nbsp; Thanks for stopping by.</sub>
+</div>
