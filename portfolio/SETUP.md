@@ -19,7 +19,7 @@ Your VS Code screenshot shows an outer `portfolio` folder and an inner `portfoli
 2. Copy all files in this package into your **inner `portfolio/`** folder. Keep your existing `assets/images` and `assets/download` folders. Images and downloads were **not included** in the files uploaded here.
 3. Rename or remove the old `index.html` so `index.php` loads by default. The old `about.html` and `projects.html` can be kept as backups, but the new navbar links to `about.php` and `projects.php`.
 4. `script.js` can stay empty. It is not needed.
-5. Check that your photos and other images are present. The new homepage expects `assets/images/michel.png`, and the Gravity card expects `assets/images/grvty.webp`.
+5. Check that your photos and other images are present. The new homepage expects `portfolio/assets/images/Professional Portrait with Office Bokeh.png`, and the Gravity card expects `assets/images/grvty.webp`.
 
 ## 2. Run locally
 

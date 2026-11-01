@@ -1,6 +1,6 @@
 # Portfolio release — local to live (free option)
 
-The downloadable update is **a merge package**, not a complete copy of your original project. Keep your existing `assets/images/` files (e.g. `michel.png`, `sightreading.jpg`, `grvty.webp`, school and Attendify logos) and `assets/download/` folder. Keep your existing `vendor/` from Composer.
+The downloadable update is **a merge package**, not a complete copy of your original project. Keep your existing `assets/images/` files (e.g. `Professional Portrait with Office Bokeh.png`, `sightreading.jpg`, `grvty.webp`, school and Attendify logos) and `assets/download/` folder. Keep your existing `vendor/` from Composer.
 
 ## 1. Local setup
 

@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="portfolio/assets/images/michel.png" alt="Jean Michel Mugabe" width="132">
+  <img src="portfolio/assets/images/Professional Portrait with Office Bokeh.png" alt="Jean Michel Mugabe" width="132">
 
   <h1>Jean Michel Mugabe</h1>
   <p><strong>Software Developer</strong></p>
